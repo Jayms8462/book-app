@@ -12,8 +12,17 @@
     <title>Book App</title>
   </head>
   <body>
-    <input class="search" type="text" placeholder="Search Title or Author">
-    <input class="" type="radio">Title</input>
-    <input type="radio">Author</input>
+      <form action="/search" method="post" class="search-form">
+        <label>Search
+    <input class="search" type="text" placeholder="Search Title or Author" name="search">
+</label>
+<label>Title
+    <input class="radio-button" type="radio" name="search" value="title"></input>
+</label>
+<label>Author
+    <input class="radio-button" type="radio" name="search" value="author"></input>
+</label>
+    <button type="submit">Search</button>
+</form>
   </body>
 </html>
