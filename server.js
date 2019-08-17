@@ -28,6 +28,8 @@ app.get("/hello", (request, response) => {
   response.render("pages/index");
 });
 
+app.get('*', handleError);
+
 app.post("/search", (request, response) => {
   let url = "https://www.googleapis.com/books/v1/volumes?q=";
   request.body.search[1] === "author"
@@ -48,5 +50,10 @@ app.post("/search", (request, response) => {
       console.log("Superagent Error: ", error);
     });
 });
+
+function handleError(request, response, err){
+  debugger;
+  response.redirect('pages/error');
+}
 
 app.listen(PORT, () => console.log(`Listening on port number ${PORT}`));
