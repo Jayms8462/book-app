@@ -1,0 +1,13 @@
+.container {
+  background: #9b9b9b;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 320px;
+  min-height: 758px;
+}
+
+.container > * {
+  width: 100%;
+}

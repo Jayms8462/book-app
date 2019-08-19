@@ -1,0 +1,54 @@
+.app-header {
+  align-items: center;
+  background: #0f0f0f;
+  color: white;
+  display: flex;
+  font-family: "Muli", sans-serif;
+  font-size: 20px;
+  height: 60px;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+.change {
+  border: solid rgba(0, 0, 0, 0) 0px;
+}
+
+.change.bar1 {
+  -webkit-transform: rotate(-40deg) translate(-4px, 4px);
+  transform: rotate(-40deg) translate(-4px, 4px);
+}
+
+.change.bar2 {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+.change.bar3 {
+  -webkit-transform: rotate(40deg) translate(-8px, -8px);
+  transform: rotate(40deg) translate(-10px, -10px);
+}
+
+.nav-bar {
+  border-radius: 3px;
+  width: 35.5px;
+  height: 6.5px;
+  margin: 3.5px;
+  background: white;
+  transition: 0.4s;
+}
+
+#header-text {
+  display: inline-block;
+}
+
+#menu-icon-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  display: inline-block;
+  margin-right: 30px;
+  padding: 2px;
+}

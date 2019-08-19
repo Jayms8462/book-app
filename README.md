@@ -5,31 +5,37 @@
 
 ## Overview
 
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code 301 class. (i.e. What's your problem domain?) -->
+To utilize the Google Book API to pull searched titles or authors and store the data in out Databse if it does not already exist in the DB.
+
+Color Palette- Chosen off colors insread of hard colors to make it easier on the eyes
+Header background - #0F0F0F
+Main section background - #C0C0C0
+Body background - #808080
+Sub-heading background - #5a5a5a
+Elements - #F0F0F0
+Fonts - 1st- Garamond, 2nd- Caslon both chosen out of popular typescript of books.
 
 ## Getting Started
 
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+For standard users when visiting the page they will only need to search by either Title or the Author that they are searching for. Then they locate the book they are trying to search for. Eventually they will be able to save the book into a collection.
+
+For Developers, all you will need to do is include the sting of the DATABSE_URL in an environment file. They will then be able to do the same above.
 
 ## Architecture
 
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+Node.Js
+Express
+Postgres
+EJS
+
+all included in the package.json so all that you will need to do is an npm install.
 
 ## Change Log
 
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
+8/15
+Added the Base Pages for home and a test for /hello. Also added in a grab for anything that does not exist and redirects people to error page. Superagent call to api to get data and outputs it to the page. Added in call to Error for later use. Added in views for the different pages.
+3 hours to complete the above.
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
-
-## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
-
-<!-- Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____ -->
+8/17
+Added Readme information
+Added in Styles folder containing Color Palette

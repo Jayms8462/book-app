@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: white;
+}
+
 body {
-  background: rgb(160, 228, 248);
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+main {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+a,
+a:active {
+  color: white;
 }
