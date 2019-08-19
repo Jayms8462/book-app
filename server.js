@@ -117,4 +117,9 @@ function handleError(request, response, err) {
   response.redirect(err, "..");
 };
 
+function handleError(request, response, err){
+  debugger;
+  response.redirect('pages/error');
+}
+
 app.listen(PORT, () => console.log(`Listening on port number ${PORT}`));
