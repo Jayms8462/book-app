@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="./../../public//styles/base.css"
-    />
+    <%- include('../../layout/head') %>
+    <link rel="stylesheet" href="public\styles\layout.css">
     <title>Search Results</title>
   </head>
-  <body>
-    <% bookResults.forEach(book => { %>
-    <section class="book">
-      <img src="<%= book.image %>" alt="book-image" />
-      <h4 class="book-title"><%= book.title %></h4>
-      <h5 class="book-author"><%= book.author %></h5>
-      <p class="book-description"><%= book.description %></p>
-    </section>
-    <% }) %>
+  <body class="container search-results-container">
+      <%- include('../../layout/header') %>
+    <main class="search-main-container">
+      <header class="sub-header">
+        <h2 class="sub-heading">Search Results</h1>
+      </header>
+      <% bookResults.forEach(book => { %>
+        <%- include('../books/detail', {book: book}) %>
+      <% }) %>
+    </main>
+    <%- include('../../layout/footer') %>
   </body>
 </html>

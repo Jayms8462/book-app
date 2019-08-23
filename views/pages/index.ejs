@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="./../../public//styles/base.css"
-    />
+      <% include ../layout/head %>
     <title>Book App</title>
   </head>
-  <body>
+  <body class="container index-container">
+    <% include ../layout/header %>
+    <main class="index-main-container">
+      <header class="sub-header">
+        <h2 class="sub-heading">Search by Title or Author</h2>
+      </header>
       <form action="/search" method="post" class="search-form">
-        <label>Search
-    <input class="search" type="text" placeholder="Search Title or Author" name="search">
-</label>
-<label>Title
-    <input class="radio-button" type="radio" name="search" value="title"></input>
-</label>
-<label>Author
-    <input class="radio-button" type="radio" name="search" value="author"></input>
-</label>
-    <button type="submit">Search</button>
-</form>
+        <label class="search-component">
+          <input class="search-box" type="text" placeholder="Search for a title or author" name="search" required>
+        </label>
+        <label class="search-component radio-button">Title
+          <input type="radio" name="search" value="title"></input>
+        </label>
+        <label class="search-component radio-button">Author
+        <input type="radio" name="search" value="author"></input>
+        </label>
+        <button class="search-component search-button" type="submit"><span class="search-button-text">Search the Google Books API</span></button>
+      </form>
+    </main>
+    <% include ../layout/footer %>
   </body>
 </html>

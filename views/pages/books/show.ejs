@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../../layout/head') %>
+    <link rel="stylesheet" href="/public/styles/layout.css">
+  </head>
+    <body>
+      <%- include('../../layout/header') %>
+        <main>
+            <form action="hide()">
+              <%- include('../books/detail', {book: book}) %>
+            </form>
+        </main>
+        <%- include('../../layout/footer') %>
+    </body>
+</html>
