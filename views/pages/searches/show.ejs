@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <% include ../partials/head %>
+    <%- include('../../layout/head') %>
+    <link rel="stylesheet" href="public\styles\layout.css">
     <title>Search Results</title>
   </head>
   <body class="container search-results-container">
-      <% include ../partials/header %>
+      <%- include('../../layout/header') %>
     <main class="search-main-container">
       <header class="sub-header">
         <h2 class="sub-heading">Search Results</h1>
       </header>
       <% bookResults.forEach(book => { %>
-      <section class="book">
-        <img src="<%= book.image %>" alt="book-image" class="book-image" />
-        <h4 class="book-title"><%= book.title %></h4>
-        <h5 class="book-author"><%= book.author %></h5>
-        <p class="book-description"><%= book.description %></p>
-        <button class="select-book-button">Select this Book</button>
-      </section>
+        <%- include('../books/detail', {book: book}) %>
       <% }) %>
     </main>
-    <% include ../partials/footer %>
+    <%- include('../../layout/footer') %>
   </body>
 </html>
-

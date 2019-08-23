@@ -52,3 +52,9 @@
   margin-right: 30px;
   padding: 2px;
 }
+
+button {
+  background: none;
+  color: #FFFFFF;
+  border: 0;
+}

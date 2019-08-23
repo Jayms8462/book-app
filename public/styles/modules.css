@@ -35,7 +35,8 @@
 }
 
 .search-button,
-.select-book-button {
+.select-book-button,
+.save-book-button {
   background: #0f0f0f;
   border: none;
   color: white;
@@ -69,7 +70,8 @@
   margin: 0 auto;
 }
 
-section.book {
+section.book,
+section.bookDetails {
   background: #d8d8d8;
   border-radius: 3px;
   box-shadow: black 0px 1px 7px 1px;
@@ -81,7 +83,8 @@ section.book {
   margin: 50px auto;
 }
 
-.select-book-button {
+.select-book-button,
+.save-book-button {
   align-items: center;
   border-radius: 3px;
   font-size: 18px;
@@ -98,4 +101,8 @@ section.book {
   display: grid;
   height: 50px;
   margin-bottom: 50px;
+}
+
+.hideMe {
+  display: none;
 }
