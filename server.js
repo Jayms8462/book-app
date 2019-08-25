@@ -92,7 +92,7 @@ function nullPage(request, response) {
 }
 
 function handleError(request, response, err) {
-  response.redirect(err, "..");
+  response.redirect(err, "Sorry this does not exist please try another page");
 }
 
 app.listen(PORT, () => console.log(`Listening on port number ${PORT}`));
