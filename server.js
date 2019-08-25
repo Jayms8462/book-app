@@ -43,7 +43,6 @@ function Book(book) {
     ? book.volumeInfo.description
     : "No description available";
   this.id = book.id ? book.id : "No id Available";
-  loadDB(this);
 }
 
 app.get("/", (request, response) => {
@@ -54,71 +53,11 @@ app.get("/", (request, response) => {
   }
 });
 
-app.get('/books/:id', getBookDetails);
-
-function getBookDetails(request, response) {
-  let id = request.params.id ? request.params.id : parseInt(request.body.id);
-  let SQL = "SELECT * FROM booksearch WHERE id=$1;";
-  client.query(SQL, [id]).then(results => {
-      response.render("pages/searches/show", { bookResults: results.rows });
-  });
-}
 
 app.get("*", nullPage);
 
-app.post("/search", (request, response) => {
-  client
-    .query(
-      `SELECT * FROM booksearch WHERE title LIKE '%${request.body.search[0]}%';`
-    )
-    .then(result => {
-      result.rowCount <= 0
-        ? searchApi(request, response)
-        : result.rowCount > 0
-        ? pullDb(request, response)
-        : "Broken";
-    });
-});
+app.post("/searches", searchApi)
 
-app.post("/book", (request, response) => {
-  console.log(request);
-})
-
-function loadDB(data) {
-  const SQL = `INSERT INTO booksearch (image, title, author, industryidentifiers, description, id) VALUES ($1, $2, $3, $4, $5, $6);`;
-  let values = [
-    data.image,
-    data.title,
-    data.author,
-    data.isbn,
-    data.description,
-    data.id
-  ];
-  client.query(SQL, values);
-}
-
-function pullDb(request, response) {
-  client
-    .query(
-      `SELECT * FROM booksearch WHERE title LIKE '%${request.body.search[0]}%';`
-    )
-    .then(data => {
-      let results = [];
-      for (let i = 0; i < data.rowCount; i++) {
-        let result = {
-          image: data.rows[i].image,
-          title: data.rows[i].title,
-          author: data.rows[i].author,
-          isbn: data.rows[i].isbn,
-          description: data.rows[i].description,
-          id: data.rows[i].id
-        };
-        results.push(result);
-      }
-      console.log("Pull From DB");
-      response.render("pages/searches/show", { bookResults: results });
-    });
-}
 
 function searchApi(request, response) {
   let url = "https://www.googleapis.com/books/v1/volumes?q=";
