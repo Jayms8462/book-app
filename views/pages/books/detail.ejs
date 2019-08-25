@@ -3,20 +3,4 @@
   <img src="<%= book.image %>" alt="book-image" class="book-image" />
   <p>Title: <h4 class="book-title"><%= book.title %></h4>
   <p>Author: <h5 class="book-author"><%= book.author %></h5>
-  <button><a href="/books/<%= book.id %>"> View Details</a></button>
-  <button class="select-book-button">Edit Details</a></button>
 </section>
-
-<section class="hideMe">
-  <form action="/book" method="post">
-    <img src="<%= book.image %>" alt="book-image" class="book-image" />
-    <p>Title: <input value="<%= book.title %>"></input></p>
-    <p>Author: <input value="<%= book.author %>"></input></p>
-    <p>ISBN: <input value="<%= book.isbn %>"></input></p>
-    <p>Description: <input value="<% book.description %>"></input></p>
-    <p>Bookshelf: <input type="text"></input></p>
-    <!-- Add delete button -->
-   <a href="/books/<%= book.id %>"><button class="delete-button">DELETE</button></a>
-    <button class="save-book-button" type="submit">Save to DB</button>
-  </form>   
-</section> 
