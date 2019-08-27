@@ -1,6 +1,46 @@
+<section>
+  <div id="book" class="book">
+      <form action="/books/<%= book.id %>" method="delete" name="book">
+    <img src="<%= book.image %>" alt="book-image" class="book-image" />
+    <h4 class="book-title"><%= book.title %></h4>
+    <h5 class="book-author"><%= book.author %></h5>
+    <button class="view-details-button">
+      <a class="viewDetails" id="viewDetails" href="/books/<%= book.id %>">
+        View Details</a
+      >
+    </button>
+  </div>
 
-<section id="book">
-  <img src="<%= book.image %>" alt="book-image" class="book-image" />
-  <p>Title: <h4 class="book-title"><%= book.title %></h4>
-  <p>Author: <h5 class="book-author"><%= book.author %></h5>
+  <div class="hideMe bookDetails" id="bookDetails">
+    <img src="<%= book.image %>" />
+    <h4 class="book-title"><%= book.title %></h4>
+    <h5 class="book-author"><%= book.author %></h5>
+    <textarea class="book-description"><%= book.description %></textarea>
+    <p class="book-isbn"><%= book.isbn %></p>
+    <p class="book-bookshelf">Bookshelf: <%= book.bookshelf %></p>
+    <button class="update-details-button">Update Details</button>
+    <button class="delete-book-button" type="submit">Delete Book</button>
+  </form>
+
+  <form action="/books" method="post" name="book" id="bookForm" class="hideMe bookForm">
+    <input
+      name="book"
+      type="text"
+      value="<%= book.image %>"
+      style="display: none;"
+    />
+    <input name="book" value="<%= book.title %>" />
+    <input name="book" value="<%= book.author %>" />
+    <input name="book" value="<%= book.isbn %>" />
+    <textarea class="details-description" name="book"><%= book.description %></textarea>
+    <input name="book" type="text" required />
+    <input
+      name="book"
+      style="display: none;"
+      type="text"
+      value="<%= book.id %>"
+    />
+    <button class="update-book-button">Update Book</button>
+  </form>
+</div>
 </section>

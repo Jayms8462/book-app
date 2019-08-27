@@ -10,9 +10,9 @@
     <main class="search-main-container">
       <header class="sub-header">
         <h2 class="sub-heading">Search Results</h1>
-      </header>
+        </header>
       <% bookResults.forEach(book => { %>
-        <%- include('../books/detail', {book: book}) %>
+          <%- include('../books/detail', {book: book}) %>
       <% }) %>
     </main>
     <%- include('../../layout/footer') %>
